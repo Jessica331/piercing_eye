@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+         <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+         <!--  namespace 对应到 接口上 就不需要实例化了  -->
+         <mapper namespace="com.wangyp.piercing_eye.domain.PersonMapper">
+
+                <!-- 对象和表之间的字段和属性的映射关系 -->
+                <resultMap  type="com.wangyp.piercing_eye.domain.Person" id="BaseResultMap">
+
+                    <!-- column 表里面的字段 -->
+                    <!-- property 实体对象里面的属性 -->
+                    <result column="pid" property="pid" />
+                    <result column="pname" property="pname" />
+                    <result column="ppsd" property="ppsd" />
+
+                </resultMap>
+
+                <select id="findAll" resultMap="BaseResultMap">
+                    select * from person
+                </select>
+
+         </mapper>
